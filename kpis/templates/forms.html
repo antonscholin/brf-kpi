@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block hero %}
+
+{% endblock hero %}
+
+{%block content %}
+
+<div class="form-style-10">
+	<form method="POST">
+	    {% csrf_token %}
+	    {{ form }}
+	    <input type="submit" value="Submit">
+	</form>
+
+	{% if saved %} <p>Saved!</p> {% endif %}
+</div>
+
+{% endblock content %}

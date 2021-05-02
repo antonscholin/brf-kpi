@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% include "imports/header_includes.html" %}
+
+    {% block headincludes %}
+    {% endblock headincludes %}
+
+    <title>
+      {% if debug %}[DEBUG] {% endif %}
+      
+      {% block titlesuffix %}BRF KPI{% endblock titlesuffix %}
+    </title>
+
+  </head>
+
+  <body>
+
+    <div id="main" role="main" class="{% if is_home %}is-home{% endif %}">
+
+      <div class="pure-menu pure-menu-horizontal">
+          <a href="{% url 'home' %}" class="pure-menu-heading pure-menu-link">BRF KPIs</a>
+          <ul class="pure-menu-list">
+              <li class="pure-menu-item"><a href="{% url 'add-brf' %}" class="pure-menu-link">Add BRF</a></li>
+              <li class="pure-menu-item"><a href="{% url 'add-kpis' %}" class="pure-menu-link">Add BRF Kpis</a></li>  
+              <li class="pure-menu-item"><a href="{% url 'update-kpis' %}" class="pure-menu-link">Update BRF Kpis</a></li>
+              <li class="pure-menu-item"><a href="{% url 'plot-kpis' %}" class="pure-menu-link">Plot BRF Kpis</a></li>
+          </ul>
+      </div>
+
+      {% block hero %}
+      {% endblock hero %}
+
+      <div class="container-fluid">
+
+        {% block content %}
+        {% endblock content %}
+
+      </div>
+
+    </div>
+
+    {% include "partials/footer.html" %}
+
+    {% include "imports/footer_includes.html" %}
+
+    {% block endofbodyincludes %}
+    {% endblock endofbodyincludes %}
+
+  </body>
+
+</html>

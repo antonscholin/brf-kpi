@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block hero %}
+
+{% endblock hero %}
+
+{%block content %}
+
+<h2>Hur bra är din bostadsförenings ekonomi?</h2>
+<p>Skriv nåt här</p>
+
+{%include "kpi_plots/interest_costs.html"%}
+
+{%include "kpi_plots/uh_am.html"%}
+
+{%include "kpi_plots/debt.html"%}
+
+{% endblock content %}

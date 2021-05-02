@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block hero %}
+
+<h1>BRF KPIs</h1>
+
+{% endblock hero %}
+
+{%block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+{% if saved %} <p>Saved!</p> {% endif %}
+
+{% endblock content %}

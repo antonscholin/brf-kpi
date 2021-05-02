@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block hero %}
+
+{% endblock hero %}
+
+{%block content %}
+
+<div class="form-style-10">
+	<form method="POST">
+	    {% csrf_token %}
+	    <select>
+	    	{% for i in brf_kpis%}
+	    		<option value="{{i.brf}}">{{i.brf}}</option>
+	    	{% endfor %}
+	    </select>
+	    <input type="submit" value="Submit">
+	</form>
+</div>
+
+{% endblock content %}
